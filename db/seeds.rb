@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'json'
+
+file_path = Rails.root.join('db', 'data', 'states.json')
+states = JSON.parse(File.read(file_path))
+
+states.each do |state|
+  State.find_or_create_by!(name: state['name']) do |record|
+    record.abbreviation = state['abbreviation']
+  end
+end
+

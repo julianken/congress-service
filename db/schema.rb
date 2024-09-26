@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_26_012229) do
     t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["abbreviation"], name: "index_states_on_abbreviation", unique: true
   end
 
 end
