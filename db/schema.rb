@@ -18,11 +18,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_26_015647) do
     t.string "name"
     t.string "chamber"
     t.string "bioguide_id"
+    t.string "party"
     t.boolean "current_member"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "state_id", null: false
     t.index ["bioguide_id"], name: "index_representatives_on_bioguide_id", unique: true
+    t.index ["party"], name: "index_representatives_on_party"
     t.index ["state_id"], name: "index_representatives_on_state_id"
   end
 

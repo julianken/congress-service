@@ -4,6 +4,7 @@ class CreateRepresentatives < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :chamber
       t.string :bioguide_id, index: { unique: true }
+      t.string :party, index: true
       t.boolean :current_member
       t.timestamps
     end
